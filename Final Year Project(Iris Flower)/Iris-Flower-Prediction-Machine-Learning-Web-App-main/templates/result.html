@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iris Flower Detection Result</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('static/bc1.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+      }
+
+      header {
+        background-color: rgba(139, 94, 131, 0.95);
+        color: #ffd700;
+        padding: 20px 40px;
+        font-size: 2.5em;
+        font-weight: bold;
+        text-shadow: 2px 2px #00000060;
+        border-bottom: 4px solid #fff;
+        text-align: left;
+      }
+
+      .result-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+      }
+
+      .result-card {
+        background-color: rgba(255, 255, 255, 0.92);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        max-width: 500px;
+      }
+
+      .result-card h1 {
+        font-size: 2em;
+        color: #8b5e83;
+        margin-bottom: 20px;
+      }
+
+      .result-image {
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 3px solid #8b5e83;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        margin-bottom: 30px;
+      }
+
+      .back-button {
+        text-decoration: none;
+        background-color: #8b5e83;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 1em;
+        transition: background-color 0.3s ease;
+      }
+
+      .back-button:hover {
+        background-color: #6c4568;
+      }
+    </style>
+  </head>
+  <body>
+    <header>IRIS FLOWER DETECTION RESULT</header>
+
+    <div class="result-container">
+      <div class="result-card">
+        <h1>PREDICTION:</h1>
+
+        {% if pred == 0 %}
+          <h1>Iris-setosa</h1>
+          <img src="static/setosa.jpg" alt="Setosa" class="result-image" />
+        {% elif pred == 1 %}
+          <h1>Iris-versicolor</h1>
+          <img src="static/vesicolor.jpg" alt="Versicolor" class="result-image" />
+        {% else %}
+          <h1>Iris-virginica</h1>
+          <img src="static/viginica1.jpg" alt="Virginica" class="result-image" />
+        {% endif %}
+
+        <a href="/" class="back-button">Home Page</a>
+      </div>
+    </div>
+  </body>
+</html>
